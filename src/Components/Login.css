@@ -1,0 +1,164 @@
+:root {
+  --bg: #254469;
+  --card-bg: #ffffff;
+  --primary: #0067b9;
+  --primary-hover: #1c53b4;
+  --border: #d5dae1;
+  --text: #1f1f22;
+  --text-muted: #66707f;
+  --radius: 12px;
+  --shadow: 0 8px 26px rgba(0,0,0,0.06);
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.fm-login-bg {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* centers login card horizontally */
+  align-items: center;     /* centers login card vertically */
+  position: relative;      /* for logo positioning */
+}
+
+/* Logo positioned top-left */
+.fm-logo-container {
+  position: absolute;
+  top: 20px;   /* margin from top */
+  left: 20px;  /* margin from left */
+}
+
+.fm-logo {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Login card */
+.fm-login-card {
+  width: 360px;
+  background: var(--card-bg);
+  padding: 38px 42px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 1;
+}
+
+/* Title left-aligned */
+.fm-title {
+  margin: 0 0 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+}
+
+/* Form fields */
+.fm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+
+.fm-group {
+  width: 100%;
+}
+
+.fm-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.fm-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: 0.25s;
+  box-sizing: border-box;
+}
+
+.fm-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(39, 110, 241, 0.18);
+}
+
+.fm-group input:disabled {
+  background: #f0f2f5;
+  cursor: not-allowed;
+}
+
+/* Align remember-me with inputs */
+.fm-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Button same width as inputs */
+.fm-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.25s;
+  box-sizing: border-box;
+}
+
+.fm-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Links aligned left */
+.fm-links {
+  text-align: left;
+  margin-top: 4px;
+}
+
+.fm-links a {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.fm-links a:hover {
+  color: var(--primary-hover);
+}
+
+/* Smooth fade-in for step 2 */
+.fade-in {
+  animation: fade 0.25s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .fm-login-card {
+                 /* allow it to shrink */
+    margin-left: 20px;        /* space on left */
+    margin-right: 20px;       /* space on right */
+    /* padding: 30px 20px;       slightly reduce padding for small screens */
+  }
+
+  .fm-logo {
+    max-width: 90px;          /* smaller logo on mobile */
+  }
+}
