@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import "./login.css";
+import "./Login.css";
 import Logo from '../assets/Fastmail.svg';
 
 function Login() {
